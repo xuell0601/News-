@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <xyz.xl06.news.utils.CustomHorizontalProgresWithNum
+        android:layout_marginTop="20dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:id="@+id/horizontalProgress1"
+        android:progress="0"
+        app:HorizontalProgresReachColor="#FF0000"
+        app:HorizontalProgresUnReachColor="#cab0b0"
+        app:HorizontalProgresTextColor="#FF0000"
+        android:layout_width="200dp"
+        android:layout_height="30dp">
+    </xyz.xl06.news.utils.CustomHorizontalProgresWithNum>
+
+</LinearLayout>

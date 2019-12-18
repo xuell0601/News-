@@ -1,0 +1,220 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+
+              android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+       >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rl_logined"
+                android:layout_width="fill_parent"
+                android:layout_height="90.0dip"
+                android:background="@mipmap/my_login_bg"
+                android:paddingLeft="15.0dip"
+                android:visibility="gone"
+                >
+
+                <ImageView
+                    android:id="@+id/iv_user"
+                    android:layout_width="65dip"
+                    android:layout_height="60dip"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10.0dip"
+                    android:background="@mipmap/user_head"
+                    android:scaleType="fitXY"/>
+
+                <LinearLayout
+                    android:id="@+id/login_la"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/iv_user"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10.0dip"
+                            android:singleLine="true"
+                            android:text="lashou"
+
+                            android:textSize="@dimen/size_22"/>
+
+                        <ImageView
+                            android:id="@+id/iv_now_level"
+                            android:layout_width="28.0dip"
+                            android:layout_height="22.0dip"
+                            android:layout_marginLeft="5.0dip"
+                            android:layout_toRightOf="@id/tv_name"
+                            android:visibility="visible"/>
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_name"
+                        android:layout_marginLeft="10.0dip"
+                        android:layout_marginTop="5.0dip"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="账户余额:"
+                            android:textSize="@dimen/size_20"/>
+
+                        <TextView
+                            android:id="@+id/tv_blance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10.0dip"
+
+                            android:textSize="@dimen/size_20"
+                            />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/iv_arrow_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15.0dip"
+                    android:src="@mipmap/icon_user_arrow_more"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_unlogin"
+                android:layout_width="fill_parent"
+                android:layout_height="120.0dip"
+                android:background="@color/my_title_bg"
+                android:padding="15.0dip"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/tv_unlogin_notice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="您还没有登录哦"
+                    android:textSize="@dimen/size_20"/>
+
+                <Button
+                    android:id="@+id/btn_login"
+                    android:layout_width="80.0dip"
+                    android:layout_height="30.0dip"
+                    android:layout_below="@id/tv_unlogin_notice"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10.0dip"
+                    android:background="@drawable/userlogin_btn_bg_selector"
+                    android:text="登录"
+                     android:textColor="@color/color_tab_title"
+                    android:textSize="@dimen/size_18"/>
+            </RelativeLayout>
+
+            <xyz.xl06.news.utils.MyTextView
+                android:id="@+id/tianqi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="点击Open Android SDK Manager ; 想更新下android studio 下的 sdk ;"
+                android:textSize="25sp"
+                android:singleLine="true"
+                android:ellipsize="marquee"
+                android:textColor="@color/mask_tags_1"
+                />
+
+            <!--充分使用textview属性代替LinearLayout布局-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider_line"></View>
+            <TextView
+                android:id="@+id/fujin"
+                style="@style/LoginStyle"
+                android:text="附近" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider_line"></View>
+            <RelativeLayout
+                android:id="@+id/rl_more_contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="联系客服"
+                    android:layout_width="wrap_content"
+                    style="@style/kefu"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_more_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="99999999999"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="20sp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    />
+
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider_line"></View>
+
+            <TextView
+                android:id="@+id/fankui"
+                style="@style/kefu"
+                android:text="反馈" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider_line"></View>
+            <TextView
+                android:id="@+id/jiancha"
+                style="@style/kefu"
+                android:text="检查更新" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider_line"></View>
+            <TextView
+            android:id="@+id/shezhi"
+            style="@style/LoginStyle"
+            android:text="设置" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider_line"></View>
+            <TextView
+                android:id="@+id/ll_touzi_zhiguan"
+                style="@style/LoginStyle"
+                android:text="关于我们" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider_line"></View>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

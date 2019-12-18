@@ -1,0 +1,108 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.mob.sdk'
+android {
+    compileSdkVersion 23
+    buildToolsVersion '23.0.2'
+    useLibrary 'org.apache.http.legacy'
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+
+    MobSDK {
+        appKey "2a07566d77800"
+        appSecret "19065a12f53e9b95094f9dc18e486fd5"
+
+        ShareSDK {
+            //平台配置信息
+            devInfo {
+                SinaWeibo {
+                    appKey "568898243"
+                    appSecret "38a4f8204cc784f81f9f0daaf31e02e3"
+                    callbackUri "http://www.sharesdk.cn"
+                    shareByAppClient false
+                }
+                Wechat {
+                    appId "wx4868b35061f87885"
+                    appSecret "64020361b8ec4c99936c0e3999a9f249"
+                }
+                QQ {
+                    appId "100371282"
+                    appKey "aed9b0303e3ed1e27bae87c33761161d"
+                    shareByAppClient true
+                }
+                Facebook {
+                    appKey "1412473428822331"
+                    appSecret "a42f4f3f867dc947b9ed6020c2e93558"
+                    callbackUri "https://mob.com"
+                }
+            }
+        }
+
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+
+        }
+        defaultConfig {
+            applicationId "xyz.xl06.news"
+            minSdkVersion 15
+            targetSdkVersion 23
+            versionCode 1
+            versionName "1.0"
+            multiDexEnabled true
+
+        }
+        buildTypes {
+            release {
+                minifyEnabled false
+                proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            }
+        }
+    }
+
+
+
+    dependencies {
+        compile fileTree(include: ['*.jar'], dir: 'libs')
+        testCompile 'junit:junit:4.12'
+        compile 'com.android.support:appcompat-v7:23.0.2'
+        compile 'com.jakewharton:butterknife:5.1.1'
+        compile 'com.nineoldandroids:library:2.4.0'
+        compile 'com.android.support:design:23.3.0'
+        compile 'com.android.support:support-v4:23.3.0'
+        compile 'com.squareup.okhttp:okhttp:2.6.0'
+        compile 'com.squareup.okio:okio:1.6.0'
+        compile 'com.alibaba:fastjson:1.1.55.android'
+        compile 'com.youth.banner:banner:1.1.5'
+        compile 'com.android.support:recyclerview-v7:23.+'
+        compile 'com.android.support:cardview-v7:23+'
+        compile project(':jcvideoplayer-lib')
+        compile project(':library')
+        compile 'com.squareup.picasso:picasso:2.5.2'
+        debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4-beta2'
+        releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
+
+        compile 'cn.bmob.android:bmob-sdk:3.6.9-rc2'
+        compile "io.reactivex.rxjava2:rxjava:2.2.2"
+        compile 'io.reactivex.rxjava2:rxandroid:2.1.0'
+        compile 'com.squareup.okio:okio:2.1.0'
+        compile 'com.google.code.gson:gson:2.8.5'
+        compile 'com.squareup.okhttp3:okhttp:3.12.0'
+
+
+        compile 'com.android.support:multidex:1.0.1'
+
+
+    }
+}
+dependencies {
+    compile files('libs/utdid4all-1.1.5.3_proguard.jar')
+    compile files('libs/umeng-common-2.0.1.jar')
+    compile files('libs/umeng-analytics-8.0.0.jar')
+    compile files('libs/BaiduLBS_Android.jar')
+    compile files('libs/component_common_sdk_1.0.0.jar')
+    compile files('libs/IndoorscapeAlbumPlugin.jar')
+}
